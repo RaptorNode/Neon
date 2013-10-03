@@ -131,8 +131,8 @@ status "Beginning installation phase 1 of 2"
 
 echo "deb http://repo.neoncp.com/dotdeb stable all" >> /etc/apt/sources.list
 echo "deb http://xi.rename-it.nl/debian/ stable-auto/dovecot-2.0 main" >> /etc/apt/sources.list
-wget http://repo.neoncp.com/dotdeb/dotdeb.gpg
-cat dotdeb.gpg | apt-key add -
+wget -qO- http://xi.rename-it.nl/debian/archive.key | apt-key add -
+wget -qO- http://repo.neoncp.com/dotdeb/dotdeb.gpg  | apt-key add -
 rm -rf dotdeb.gpg
 apt-get update
 y=$(($y + 1));
