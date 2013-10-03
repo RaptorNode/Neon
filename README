@@ -25,6 +25,23 @@ Copy & paste this command into SSH:
 
 cd ~ && wget --no-check-certificate https://raw.github.com/BlueVM/Neon/develop/neon-installer.sh && bash neon-installer.sh
 
+=========================================
+MAIL DIRECTIONS (MANUAL SETUP FOR NOW)
+==========================================
+Updates to installer to support email. Now installs: dovecot, postfix and roundcube.
+
+Dovecot / Postfix in normal locations (/etc/program)
+Roundcube installed to /var/neon/roundcube
+Nginx config added for roundcube.
+Roundcube remotely accessible from https://yourip:2027
+Added database `mailserver`.
+Added database `roundcube`.
+
+Neon does not have the ability to create mail accounts at this time. This must be done manually:
+1. Go into the database `mailserver` and the table `virtual_domains`. Insert a row for your domain, remember the `id` collumn for step 2.
+2. Go into the database `mailserver` and the table `virtual_users`. Insert a row with the domain_id, a password generated via the command "doveadm pw -s CRYPT" and an email "example@domain.com".
+You should now be able to login to roundcube, send and recieve email (assuming your domain has an MX record pointed at the server).
+
 ==========================================
 KNOWN BUGS
 ==========================================
