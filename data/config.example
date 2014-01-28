@@ -1,12 +1,4 @@
 {
-  "database": {
-    "driver": "mysql",
-    "hostname": "localhost",
-    "username": "databaseusernamehere",
-    "password": "databasepasswordhere",
-    "database": "databasenamehere",
-    "pdo": true
-  },
   "locale": {
     "path": "templates/languages",
     "extension": "lng",
@@ -17,11 +9,9 @@
     "enabled": false
   },
   "class_map": {
-  
   },
   "settings": {
   "salt": "randomlygeneratedsalthere",
-  "defaulttemplate": "blue_default",
   "rootkey": "../../neon/data/id_rsa",
   "commandlog": "../../neon/data/log.txt"
   },
