@@ -1,3 +1,3 @@
 <?php
-includes('./includes/db.php');
-includes('../data/settings.php');
+include('./includes/db.php');
+include('../data/settings.php');

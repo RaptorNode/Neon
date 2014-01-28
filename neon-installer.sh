@@ -134,8 +134,8 @@ chown -R www-data *
 chmod -R 700 *
 status "Config: 5 / 7"
 
-/etc/init.d/nginx restart
-/etc/init.d/php5-fpm restart
+service nginx restart
+service php5-fpm restart
 (crontab -l 2>/dev/null; echo "* * * * * sh /var/neon/neonpanel/cron.php") | crontab -
 ipaddress=`ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | grep -v '127.0.0.2' | cut -d: -f2 | awk '{ print $1}'`;
 status "Config: 6 / 7"
@@ -146,6 +146,8 @@ mkdir /var/neon/neonpanel/downloads
 mkdir /home/root/
 pkill apache
 pkill apache2
+service nginx restart
+service php5-fpm restart
 status "Config: 7 / 7"
 
 status "=========NEON_INSTALL_COMPLETE========"
