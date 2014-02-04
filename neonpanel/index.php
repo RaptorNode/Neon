@@ -6,7 +6,7 @@ if($sLogin == 1){
 	die();
 }
 
-if($_GET['id'] == 1){
+if($sId == 'login'){
 	$sErrors = login($_POST['username'], $_POST['password']);
 }
 
