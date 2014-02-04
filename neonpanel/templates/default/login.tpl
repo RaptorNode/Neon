@@ -16,6 +16,9 @@
 					<h1 class="text-center login-title">Sign in to Neon</h1>
 					<div class="account-wall">
 						<form class="form-signin" name="login" action="index.php?id=login" method="post">
+							{%if isset|Errors == true}
+								<div class="alert alert-danger">{%?Errors[result]}</div>
+							{%/if}
 							<input type="text" class="form-control" placeholder="Username" name="username" required autofocus>
 							<input type="password" class="form-control" placeholder="Password" name="password" required>
 							<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
